@@ -188,21 +188,6 @@ int main(int argc, char *argv[])
     who.fname = ssbuf.str();
     ssbuf.str(std::string());
 
-    for (unsigned int i = pos; i < line.length(); i++)
-    {
-        if (line[i] != ',')
-        {
-            ssbuf << line[i];
-        }
-        else
-        {
-            pos = i+1;
-            break;
-        }
-    }
-    who.id = ssbuf.str();
-    ssbuf.str(std::string());
-
     file.close();
 
     std::stringstream msg;

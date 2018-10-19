@@ -26,7 +26,6 @@ struct Victim
 {
     std::string fname;
     std::string lname;
-    std::string id;
 };
 
 #endif // INCLUDES_H
