@@ -1,0 +1,6 @@
+<RCC>
+    <qresource>
+        <file>translations/victimize_en.qm</file>
+        <file>translations/victimize_fr.qm</file>
+    </qresource>
+</RCC>
