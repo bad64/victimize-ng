@@ -10,6 +10,7 @@ Linux: victimize [options] [path to txt file]
 *Options:*  
 - --cli: Outputs to console instead of through Qt
 - --dull: Gets rid of the fancy reasons explaining why you'd want to toss that particular person under the bus
+- --lang <language code>: Sets language. Currently only supports "en" and "fr"
 
 *Txt file format:*  
 LASTNAME,firstname  
@@ -30,11 +31,10 @@ Q: Why ?
 A: I was bored.
 
 Q: What about MacOS ?  
-A: You try and compile it yourself. I don't have a Mac. I wish I could say it *should* compile, but clang and gcc don't work the same way, so I really have no idea. Good luck.
+A: You try and compile it yourself, but the code isn't quite set up for it (needs OSX define checks). I don't have a Mac. I wish I could say it *should* compile, but clang and gcc don't work the same way, so I really have no idea. Good luck.
 
 Q: Precompiled binaries ?  
-A: Windows should come soon. Linux less soon.
+A: Check the [releases](https://github.com/bad64/victimize-ng/releases) page !
 
-Q: Why does passing a .txt as launch option not work on Windows ?  
-Short A: Not worth the effort setting up.  
-Long A: Seriously, the CLI compatibility is essentially meant for Linux. Nothing really prevents you from adding that .exe to your %PATH% however, but if you're on Windows I still recommend you use the GUI. Passing a .txt as parameter should work, if it is in the same folder as the executable.
+Q: Why do command line options (besides --dull) not work on Windows ?  
+A: Not worth the effort setting up. I know *many* odd people and none of them would want to even launch such a program from the command line. Use the GUI, seriously.
