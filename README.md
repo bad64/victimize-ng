@@ -1,4 +1,4 @@
-#Victimize: Choose ~~your~~ someone else's fate
+# Victimize: Choose ~~your~~ someone else's fate
 
 Ever had that situation where you had to pick someone at random ? Ever had six hours of free time ? I had both.
 
