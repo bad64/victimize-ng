@@ -5,6 +5,8 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <random>
+#include <chrono>
 #include <time.h>
 
 #include <QtWidgets>

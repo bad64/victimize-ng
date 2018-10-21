@@ -80,7 +80,9 @@ int main(int argc, char *argv[])
     int lines = 0;
 
     //Seed the Random Number God
-    srand(static_cast<unsigned int>(time(nullptr)));
+    auto now = std::chrono::system_clock::now().time_since_epoch();
+    unsigned int seed = static_cast<unsigned int>(now.count());
+    srand(seed);
 
     //Begin Qt
     QApplication app(argc, argv);
@@ -123,7 +125,7 @@ int main(int argc, char *argv[])
     file.open(path.toStdString().c_str(), std::ios::in);
     std::string line;
 
-    for (int i = 0; i <= randInt(0, lines); i++)
+    for (int i = 0; i < randInt(0, lines); i++)
     {
         getline(file, line);
     }
@@ -131,7 +133,7 @@ int main(int argc, char *argv[])
     struct Victim who;
 
     unsigned int pos = 0;
-    std::stringstream ssbuf;
+    std::stringstream ssbuf;    
     for (unsigned int i = 0; i < line.length(); i++)
     {
         if ((line[i] != ',') && (line[i] !='\n'))
@@ -165,6 +167,7 @@ int main(int argc, char *argv[])
     file.close();
 
     std::stringstream msg;
+
     if (!dull)
         #if (defined (_WIN32) || defined (_WIN64))
             msg << QObject::tr("ALERTE: Nous recherchons actuellement le dangereux individu répondant au nom de ").toStdString();

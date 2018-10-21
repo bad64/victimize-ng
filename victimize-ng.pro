@@ -9,7 +9,6 @@ HEADERS += \
     src/includes.h
 
 TRANSLATIONS += src/translations/victimize_en.ts src/translations/victimize_fr.ts
-RESOURCES = src/resources.qrc
 
 win32 {
     TARGET = bin/victimize-ng
