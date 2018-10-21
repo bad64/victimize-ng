@@ -21,27 +21,6 @@ int getLines(std::fstream &file)
     return newlines;
 }
 
-int getPos(std::fstream& file, int linenumber)
-{
-    char buf;
-    int newlines = 0;
-    int pos = 0;
-    file.seekg(0, file.beg);
-
-    while (file.get(buf))
-    {
-        pos++;
-
-        if (buf == '\n')
-            newlines++;
-
-        if (newlines == linenumber)
-            break;
-    }
-
-    return pos + 1;
-}
-
 int main(int argc, char *argv[])
 {    
     //Do we need the GUI ?
@@ -101,7 +80,7 @@ int main(int argc, char *argv[])
     int lines = 0;
 
     //Seed the Random Number God
-    srand( static_cast<unsigned int>(time(nullptr)) );
+    srand(static_cast<unsigned int>(time(nullptr)));
 
     //Begin Qt
     QApplication app(argc, argv);
@@ -144,7 +123,7 @@ int main(int argc, char *argv[])
     file.open(path.toStdString().c_str(), std::ios::in);
     std::string line;
 
-    for (int i = 0; i < randInt(0, lines); i++)
+    for (int i = 0; i <= randInt(0, lines); i++)
     {
         getline(file, line);
     }
@@ -233,13 +212,13 @@ int main(int argc, char *argv[])
         reasons[11] = QObject::tr("Téléchargement illégal de RAM").toStdString();
         reasons[12] = QObject::tr("Propos injurieux envers le PHP").toStdString();
 
-        int accusations = randInt(1,5);
+        int accusations = randInt(1, 5);
         std::string *rap_sheet = new std::string [static_cast<unsigned long>(accusations)];
 
         for (int i = 0; i < accusations; i++)
         {
             int matches = 0;
-            int why = randInt(0,12);
+            int why = randInt(0, 12);
 
             for (int j = 0; j < accusations; j++)
             {

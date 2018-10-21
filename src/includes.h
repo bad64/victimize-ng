@@ -19,7 +19,6 @@
 
 int randInt(int minvalue, int maxvalue);
 int getLines(std::fstream& file);
-int getPos(std::fstream& file);
 
 typedef struct Victim Victim;
 struct Victim
