@@ -5,7 +5,26 @@ int randInt(int minvalue, int maxvalue)
     if (maxvalue == 0)
         return 0;
 
-    return rand() % maxvalue + minvalue;
+    //Source: https://stackoverflow.com/questions/2509679/how-to-generate-a-random-integer-number-from-within-a-range
+    
+    unsigned int r;
+    const unsigned int range = 1 + maxvalue - minvalue;
+    const unsigned int buckets = RAND_MAX / range;
+    const unsigned int limit = buckets * range;
+
+    #if (defined (_WIN32) || defined (_WIN64))
+    	do
+    	{
+    		r = rand();
+    	} while (r >= limit);
+    #elif (defined (LINUX) || defined (__linux__))
+    	do
+    	{
+    		r = random();
+    	} while (r >= limit);
+    #endif
+
+    return minvalue + (r / buckets);
 }
 
 int getLines(std::fstream &file)
