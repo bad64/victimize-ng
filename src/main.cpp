@@ -100,7 +100,7 @@ int main(int argc, char *argv[])
 
     //Seed the Random Number God
     auto now = std::chrono::system_clock::now().time_since_epoch();
-    unsigned int seed = static_cast<unsigned int>(now.count());
+    unsigned int seed = static_cast<unsigned long long>(now.count());
     srand(seed);
 
     //Begin Qt
@@ -143,8 +143,11 @@ int main(int argc, char *argv[])
     file.close();
     file.open(path.toStdString().c_str(), std::ios::in);
     std::string line;
+	
+	int chosenOne = randInt(1, lines);
+	std::cout << chosenOne << std::endl;
 
-    for (int i = 0; i < randInt(0, lines); i++)
+    for (int i = 0; i < chosenOne; i++)
     {
         getline(file, line);
     }
