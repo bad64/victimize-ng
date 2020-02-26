@@ -1,4 +1,6 @@
-# Victimize: Choose ~~your~~ someone else's fate
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+ # Victimize: Choose ~~your~~ someone else's fate
 
 Ever had that situation where you had to pick someone at random ? Ever had six hours of free time ? I had both.
 
